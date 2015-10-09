@@ -1,0 +1,92 @@
+$width: calc(50px * 10vw)
+
+header.hero
+  position: relative
+  box-sizing: border-box
+  height:100vh
+  background:
+    image: url('../img/heroMB-bg.jpg')
+    size: cover
+    position-y: 100%
+    attachment:fixed
+
+  .immiget-logo
+    margin-top: -40px
+    height:35px
+    background:
+      image: url('../img/Immiget-Logo.png')
+      size:contain
+      repeat:no-repeat
+
+
+  .col-full
+    text-align: left
+    width: 100%
+
+  .flex
+    align-items: flex-start
+
+  .title
+    position: absolute
+    display: inline-block
+    width: 100vw
+    margin: 5px auto
+    text-align: left
+    text-transform: uppercase
+    z-index: 1
+    @media(max-width: 640px)
+      left: 0
+
+    .home-cta
+      display: inline-block
+      text-decoration: none
+      color: black
+      background-color: #e49249
+      font-size: 5.84vmin
+      font-weight: normal
+      padding: 0.2em
+      //box-shadow: 2px 3px 8px 0px rgba(black,0.75)
+      &:hover
+        background-color: #df8433
+
+    .ion-chevron-right
+      font-size: 0.9em
+      font-weight: lighter
+      margin: 0 0.3em
+
+  h1
+    font-family: Montserrat
+    font-size: 12.8vmin
+    font-weight: 700
+    margin-left: -6px
+    color: white
+    margin-bottom: 0
+
+  .para-girl
+    //display: flex
+    position: absolute
+    display: inline-block
+    margin-left: 50px
+    bottom: 0
+    z-index: 2
+    pointer-events: none
+    background:
+      image: url('../img/hero-girl.png')
+      size:contain
+      repeat:no-repeat
+      position-y:100%
+
+    @media(max-width: 560px)
+      margin-left: auto
+      right: -60vh
+
+
+
+  @media(max-width: 770px)
+    h1
+      font-size: 12vmin
+      margin-left: 0
+
+    .title
+      .cta
+        font-size: 5.5vmin

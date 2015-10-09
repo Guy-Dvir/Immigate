@@ -1,0 +1,22 @@
+section.map
+  background:
+    image: url('../img/map-bg.jpg')
+    size: cover
+
+
+
+  .map-img
+    width: 300px
+    height: 182px
+    background:
+      image: url('../img/map-snap.png')
+      size: contain
+      repeat: no-repeat
+      position: right center
+    transform: translateY(200px)
+    transition: all 0.3s cubic-bezier(.17,.67,.48,1.37)
+
+    @media (max-width: 640px)
+      margin: auto
+
+    box-shadow: 2px 3px 8px 0px rgba(black,0.75)

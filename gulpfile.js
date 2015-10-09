@@ -1,7 +1,6 @@
 var gulp        = require('gulp');
 var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
-var prefix      = require('gulp-autoprefixer');
 var jade        = require('gulp-jade');
 var prefix      = require('gulp-autoprefixer');
 
@@ -29,15 +28,15 @@ function errorlog(error){
  * Compile main.sass into main.css
  */
 gulp.task('sass', function () {
-    return gulp.src('assets/css/main.sass')
+    return gulp.src('assets/css/main.scss')
         .pipe(sass({
-            includePaths: ['css'],
-            onError: browserSync.notify
+          includePaths: ['assets/css/**'],
+          onError: browserSync.notify
         }))
         .on ('error', errorlog)
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gulp.dest('assets/css'))
-        .pipe(browserSync.reload({stream:true}))
+        .pipe(browserSync.reload({stream:true}));
 });
 
 /**
@@ -50,7 +49,7 @@ gulp.task('jade', function () {
    }))
   .on ('error', errorlog)
   .pipe(gulp.dest(''))
-  .pipe(browserSync.reload({stream:true}))
+  .pipe(browserSync.reload({stream:true}));
 });
 
 /**
@@ -58,8 +57,8 @@ gulp.task('jade', function () {
  * Watch html/jade files, reload BrowserSync
  */
 gulp.task('watch', function () {
-    gulp.watch('assets/css/**.sass', ['sass']);
-    gulp.watch('_jadefiles/**', ['jade'])
+    gulp.watch('assets/css/**', ['sass'])
+    gulp.watch('_jadefiles/**', ['jade']);
 });
 
 /**
