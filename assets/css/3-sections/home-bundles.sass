@@ -11,7 +11,11 @@ section.bundles
     width: 310px
     height: 370px
     transform: translateY(200px)
-    transition: transform 0.3s cubic-bezier(.17,.67,.48,1.37)
+    background:
+      size: contain
+      repeat: no-repeat
+      position: right center
+    transition: transform 0.3s cubic-bezier(.17,.67,.48,1.37), background 0.3s ease
 
     @media (max-width: 640px)
       width: 235px
@@ -21,13 +25,7 @@ section.bundles
   .job
     background:
       image: url('../img/Bundle-job-graphic.svg')
-      size: contain
-      repeat: no-repeat
-      position: right center
 
   .res
     background:
       image: url('../img/Bundle-res-graphic.svg')
-      size: contain
-      repeat: no-repeat
-      position: right center

@@ -2,8 +2,8 @@ $( document ).ready(function() {
   smoothScroll(500);
   clickthroughGirl();
   heroParallax();
+  adjustViewHero()
   girlSizing()
-  floatIn();
   focusSelectBtn();
 });
 
@@ -17,7 +17,13 @@ $(window).scroll(function(){
 
 $(window).on('resize', function(){
   girlSizing()
+  adjustViewHero()
 });
+
+window.setInterval(function(){
+  bundleImgChange()
+}, 4000);
+
 
 /**General***************************************/
 
@@ -48,8 +54,20 @@ function floatIn(img){
 
 /**Hero-section**********************************/
 
+//view port adjust for portrait*landscape
+function adjustViewHero(){
 
+  var flexBox = $('header.hero .flex')
 
+  if ( $(window).height() > $(window).width()) {
+    flexBox.css('display', 'block');
+  } else{
+    flexBox.css('display', 'flex');
+  }
+
+}
+
+//size girl according to port view
 function girlSizing(){
   var wHeight = $(window).height();
   $('.para-girl').css('height',(wHeight * 0.90) + 'px');
@@ -76,6 +94,21 @@ function heroParallax() {
       'transform' : 'translate(0px, '+ wScroll /5 +'%)'
     });
 }
+
+/**Bundle-section********************************/
+function bundleImgChange() {
+  var $img = $('.bundle-img');
+
+  $img.fadeOut(300, function(){
+    $img.toggleClass('job')
+    $img.toggleClass('res')
+    $img.fadeIn(300);
+  });
+
+}
+
+
+
 
 /**Search-section***********************************/
 
