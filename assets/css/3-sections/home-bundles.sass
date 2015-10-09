@@ -1,0 +1,33 @@
+section.bundles
+  background:
+    image: url('../img/bundle-bg.jpg')
+    size: cover
+  margin-top: -1px
+
+  .col-1.flex
+    align-items: center
+
+  .bundle-img
+    width: 310px
+    height: 370px
+    transform: translateY(200px)
+    transition: transform 0.3s cubic-bezier(.17,.67,.48,1.37)
+
+    @media (max-width: 640px)
+      width: 235px
+      height:280px
+      margin: auto
+
+  .job
+    background:
+      image: url('../img/Bundle-job-graphic.svg')
+      size: contain
+      repeat: no-repeat
+      position: right center
+
+  .res
+    background:
+      image: url('../img/Bundle-res-graphic.svg')
+      size: contain
+      repeat: no-repeat
+      position: right center

@@ -24,8 +24,7 @@
     "sass",
     "browsersync"
   ],
-  "bugs": {
-  },
+  "bugs": {},
   "homepage": "https://github.com/shakyShane/jekyll-gulp-sass-browser-sync",
   "dependencies": {
     "browser-sync": "^2.9.6",
