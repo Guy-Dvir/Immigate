@@ -366,6 +366,7 @@ th {
   color: white;
   height: 90vh;
   background-attachment: fixed;
+  background-color: black;
   overflow: hidden;
   margin-top: -1px; }
 
@@ -410,7 +411,7 @@ th {
   line-height: 35pt; }
 
 .home-sections p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   margin: 0; }
 
 @media (max-width: 640px) {
@@ -477,7 +478,7 @@ header.hero {
   background-attachment: fixed; }
   header.hero .immiget-logo {
     margin-top: -40px;
-    height: 35px;
+    height: 45px;
     background-image: url("../img/Immiget-Logo.png");
     background-size: contain;
     background-repeat: no-repeat; }
@@ -562,6 +563,25 @@ section.bundles {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+  section.bundles ul {
+    list-style: inside; }
+    section.bundles ul li {
+      font-size: 1.2em;
+      letter-spacing: -1px;
+      list-style: none;
+      text-indent: -5px;
+      text-align: left; }
+      section.bundles ul li .ion-minus {
+        display: inline-block;
+        text-indent: -10px;
+        font-size: 0.6em; }
+      section.bundles ul li:not(last-of-type) {
+        margin-bottom: 10px; }
+      @media (max-width: 640px) {
+        section.bundles ul li {
+          font-size: 1em; }
+          section.bundles ul li:not(last-of-type) {
+            margin-bottom: 5px; } }
   section.bundles .bundle-img {
     width: 310px;
     height: 370px;
@@ -575,8 +595,8 @@ section.bundles {
             transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37), background 0.3s ease; }
     @media (max-width: 640px) {
       section.bundles .bundle-img {
-        width: 235px;
-        height: 280px;
+        width: 265px;
+        height: 310px;
         margin: auto; } }
   section.bundles .job {
     background-image: url("../img/Bundle-job-graphic.svg"); }

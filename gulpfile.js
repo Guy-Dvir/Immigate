@@ -3,6 +3,10 @@ var browserSync = require('browser-sync');
 var sass        = require('gulp-sass');
 var jade        = require('gulp-jade');
 var prefix      = require('gulp-autoprefixer');
+var uglify      = require('gulp-uglify');
+var imagemin    = require('gulp-imagemin');
+var pngquant    = require('imagemin-pngquant');
+
 
 /**
  *launch the Server
@@ -51,6 +55,47 @@ gulp.task('jade', function () {
   .pipe(gulp.dest(''))
   .pipe(browserSync.reload({stream:true}));
 });
+
+/**
+*Compression for imgs, js ans sass before publish
+*/
+gulp.task('compressJs', function() {
+  return gulp.src('assets/js/*.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/assets/js'));
+});
+
+gulp.task('imageComp', function () {
+    return gulp.src('assets/img/**')
+        .pipe(imagemin({
+            progressive: true,
+            multipass: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/assets/img'));
+});
+
+
+gulp.task('cssMin', function () {
+    return gulp.src('assets/css/main.css')
+        .pipe(sass({
+          includePaths: ['assets/css/**'],
+          outputStyle: 'compressed',
+          onError: browserSync.notify
+        }))
+        .on ('error', errorlog)
+        .pipe(gulp.dest('dist/assets/css'))
+});
+
+
+gulp.task('publishHtml', function() {
+   gulp.src('index.html')
+   .pipe(gulp.dest('dist'));
+});
+
+gulp.task('publish', ['cssMin', 'imageComp', 'compressJs', 'publishHtml']);
+
 
 /**
  * Watch scss files for changes & recompile
