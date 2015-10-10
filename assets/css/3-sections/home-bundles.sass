@@ -7,6 +7,30 @@ section.bundles
   .col-1.flex
     align-items: center
 
+
+  ul
+    list-style: inside
+    li
+      font-size: 1.2em
+      letter-spacing: -1px
+      list-style: none
+      text-indent: -5px
+      text-align: left
+
+      .ion-minus
+        display: inline-block
+        //margin: 0 8px 0 0
+        text-indent: -10px
+        font-size: 0.6em
+
+      &:not(last-of-type)
+        margin-bottom: 10px
+
+      @media (max-width: 640px)
+        font-size: 1em
+        &:not(last-of-type)
+          margin-bottom: 5px
+
   .bundle-img
     width: 310px
     height: 370px
@@ -18,8 +42,8 @@ section.bundles
     transition: transform 0.3s cubic-bezier(.17,.67,.48,1.37), background 0.3s ease
 
     @media (max-width: 640px)
-      width: 235px
-      height:280px
+      width: 265px
+      height:310px
       margin: auto
 
   .job

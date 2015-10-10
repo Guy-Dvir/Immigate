@@ -12,8 +12,10 @@
     "browser-sync": "^2.9.6",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "2.3.1",
+    "gulp-imagemin": "^2.3.0",
     "gulp-jade": "^1.1.0",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.0.4",
+    "gulp-uglify": "^1.4.1"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-jade": "^1.1.0",
-    "gulp-sass": "^2.0.4"
+    "gulp-sass": "^2.0.4",
+    "imagemin-pngquant": "^4.2.0"
   }
 }
