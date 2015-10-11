@@ -606,8 +606,8 @@ section.bundles {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center;
-    -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37), background 0.3s ease;
-            transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37), background 0.3s ease; }
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.17, 0.67, 0.48, 1.37), background 0.3s ease;
+            transition: transform 0.5s cubic-bezier(0.17, 0.67, 0.48, 1.37), background 0.3s ease; }
     @media (max-width: 640px) {
       section.bundles .bundle-img {
         width: 198px;
@@ -631,8 +631,8 @@ section.map {
     -webkit-transform: translateY(500px);
         -ms-transform: translateY(500px);
             transform: translateY(500px);
-    -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37);
-            transition: all 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37);
+    -webkit-transition: all 0.5s cubic-bezier(0.17, 0.67, 0.48, 1.37);
+            transition: all 0.5s cubic-bezier(0.17, 0.67, 0.48, 1.37);
     box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.75); }
     @media (max-width: 640px) {
       section.map .map-img {
