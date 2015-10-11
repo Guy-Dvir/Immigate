@@ -16,6 +16,7 @@ $(window).scroll(function(){
 
 
 $(window).on('resize', function(){
+  mobileStableSize(Initheight)
   girlSizing()
   adjustViewHero()
 });
@@ -26,6 +27,30 @@ window.setInterval(function(){
 
 
 /**General***************************************/
+
+//no jumpings from adress bar resizing in mobile browsers
+var Initheight = $(window).height()
+
+function mobileStableSize(Initheight) {
+  var newHeight = $(window).height()
+  var newWidth = $(window).width()
+  var $sections = $('.home-sections section, .home-sections header')
+
+  if (newHeight <= Initheight + 100 && newHeight > Initheight){
+    $sections.css('height', Initheight);
+  } else {
+      if (newHeight < 1000 && newWidth > 640){
+        $sections.css('height', '90vh');
+      } else if(newHeight < 1000 && newWidth <= 640){
+          $sections.css('height', '100%');
+      } else{
+          $sections.css('height', '50vh');
+      };
+      var Initheight = newHeight
+  }
+
+}
+
 
 //smooth scroling
 function smoothScroll (duration) {
@@ -46,7 +71,7 @@ function smoothScroll (duration) {
 //Scroll triggered object float-in
 function floatIn(img){
     var wScroll = $(window).scrollTop();
-    if(img.offset().top - $(window).height()/2 < wScroll +  $(window).height()/2) {
+    if(img.offset().top - 250 - $(window).height()/2 < wScroll +  $(window).height()/2) {
         img.css('transform', 'translateY(0)');
       }
 }

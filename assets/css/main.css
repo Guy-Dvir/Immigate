@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Yellowtail|Lato:400,300,400italic|Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Yellowtail|Lato:400,300,300italic,100italic|Montserrat:700);
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -369,6 +369,9 @@ th {
   background-color: black;
   overflow: hidden;
   margin-top: -1px; }
+  @media (min-width: 1600px) {
+    .home-sections section, .home-sections header {
+      height: 50vh; } }
 
 .home-sections .flex {
   height: 100%;
@@ -411,7 +414,7 @@ th {
   line-height: 35pt; }
 
 .home-sections p {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: 0; }
 
 @media (max-width: 640px) {
@@ -485,6 +488,10 @@ header.hero {
   header.hero .col-full {
     text-align: left;
     width: 65vw; }
+    @media (min-width: 1600px) {
+      header.hero .col-full {
+        max-width: none;
+        width: 50vw; } }
   header.hero .flex {
     display: -webkit-box;
     display: -webkit-flex;
@@ -533,6 +540,9 @@ header.hero {
         font-size: 12vmin;
         letter-spacing: -2px;
         margin-left: 0; } }
+    @media (min-width: 1600px) {
+      header.hero h1 {
+        font-size: 12vmin; } }
   header.hero .para-girl {
     position: absolute;
     display: inline-block;
@@ -557,23 +567,28 @@ section.about {
 section.bundles {
   background-image: url("../img/bundle-bg.jpg");
   background-size: cover;
-  margin-top: -1px; }
+  margin-top: -1px;
+  padding-bottom: 20px; }
   section.bundles .col-1.flex {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    margin-bottom: 0; }
   section.bundles ul {
-    list-style: inside; }
+    list-style: inside;
+    padding-left: 18px; }
     section.bundles ul li {
-      font-size: 1.2em;
-      letter-spacing: -1px;
+      font-size: 1em;
+      font-style: italic;
+      letter-spacing: -0.5px;
       list-style: none;
       text-indent: -5px;
       text-align: left; }
       section.bundles ul li .ion-minus {
         display: inline-block;
-        text-indent: -10px;
+        margin: 0;
+        text-indent: -5px;
         font-size: 0.6em; }
       section.bundles ul li:not(last-of-type) {
         margin-bottom: 10px; }
@@ -584,10 +599,10 @@ section.bundles {
             margin-bottom: 5px; } }
   section.bundles .bundle-img {
     width: 310px;
-    height: 370px;
-    -webkit-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-            transform: translateY(200px);
+    height: 340px;
+    -webkit-transform: translateY(500px);
+        -ms-transform: translateY(500px);
+            transform: translateY(500px);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center;
@@ -595,8 +610,8 @@ section.bundles {
             transition: transform 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37), background 0.3s ease; }
     @media (max-width: 640px) {
       section.bundles .bundle-img {
-        width: 265px;
-        height: 310px;
+        width: 198px;
+        height: 220px;
         margin: auto; } }
   section.bundles .job {
     background-image: url("../img/Bundle-job-graphic.svg"); }
@@ -613,9 +628,9 @@ section.map {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right center;
-    -webkit-transform: translateY(200px);
-        -ms-transform: translateY(200px);
-            transform: translateY(200px);
+    -webkit-transform: translateY(500px);
+        -ms-transform: translateY(500px);
+            transform: translateY(500px);
     -webkit-transition: all 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37);
             transition: all 0.3s cubic-bezier(0.17, 0.67, 0.48, 1.37);
     box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.75); }
