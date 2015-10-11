@@ -34,17 +34,21 @@ var Initheight = $(window).height()
 function mobileStableSize(Initheight) {
   var newHeight = $(window).height()
   var newWidth = $(window).width()
-  var $sections = $('.home-sections section, .home-sections header')
+  var $sections = $('.home-sections section')
+  var $header = $('.home-sections header')
 
   if (newHeight <= Initheight + 100 && newHeight > Initheight){
-    $sections.css('height', Initheight);
+    $header.css('height', Initheight);
   } else {
       if (newHeight < 1000 && newWidth > 640){
         $sections.css('height', '90vh');
+        $header.css('height', '100vh');
       } else if(newHeight < 1000 && newWidth <= 640){
           $sections.css('height', '100%');
+          $header.css('height', '100vh');
       } else{
           $sections.css('height', '50vh');
+          $header.css('height', '100vh');
       };
       var Initheight = newHeight
   }
